@@ -1,0 +1,18 @@
+
+
+2014-09-04
+	[1]  23:15	使用linxj修改的live555库，修正了bufsize过小导致的segmentfault 
+	[2]  23:16	增加了rtsp模块中对audio_samplerate值修改的功能 
+	[3]  23:18	修正了新线程结构下udp协议下退出误重启的bug，具体修改见monitor.c NETWORK_SEND_UDP部分的注释 
+	[4]  23:20	修改了Makefile.arm部分语句，最终目标生成到libmmnp_arm.a为止，不再编译生成测试程序 
+	[5]  23:20	移植mmnp库到E200/E300编码器 
+
+
+2014-09-13
+	[1]  09:20	增加了修改audio samplerate和查询当前链接数的setopt API 
+	[2]  09:22	修改udp demand、c1和tcp相关代码，使查询当前链接数的API有效 
+	[3]  09:26	修改rtsp中ringID的申请方式，原为在主线程中统一申请然后传递参数，现为在ADTSWebFramedSource和H264FramedSource中自己申请，以保证多路请求时有效。但getH264stream函数中还依赖外界参数，且该函数只在异常抛出时调用，该ringID大部分时间不动。 
+
+
+2014-11-18
+	[1]  11:17	修正了一个C1协议因为心跳位没有归零，导致的一个断开链接超过心跳超时情况下，新的链接一直被拒绝的bug 

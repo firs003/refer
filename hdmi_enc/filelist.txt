@@ -1,0 +1,10 @@
+audio.c  capture.c  codecs.c  demand.c	main.c	video.c  vis_socket.c  writer.c
+
+.:
+audio.c    codecs.o	    encodev4_xx_config	speech.h      vismp3enc.h
+audio.h    demand.c	    filelist.txt	TSpacket.h    vis_socket.c
+audio.o    demand.h	    libvisTSpacket.a	video.c       vis_socket.o
+capture.c  demand.o	    main.c		video.h       writer.c
+capture.h  encode.txt	    main.o		video.o       writer.h
+capture.o  encodev4_xx	    Makefile		vis_common.h  writer.o
+codecs.c   encodev4_xx.cfg  readme.txt		visconfig.h

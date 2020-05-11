@@ -1,0 +1,11 @@
+
+
+---- linxj 2014-05-29 ---
+查看vis_os.h，请在文件一开始就包含
+线程、互斥等操作请用pthread
+socket编程，可按照windows来写，这样代码能保持一致性
+相关的差异如下：
+   windows      		linux
+ closesocket 			close
+ ioctlsocket(sock,type,pval) 	ioctl(sock,type,*(pval))  最后一个参数windows是指针 linux是值
+ Sleep(ms)  			usleep((ms)*1000)	  windows是Sleep毫秒  linux是usleep微妙
